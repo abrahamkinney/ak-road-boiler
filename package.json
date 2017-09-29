@@ -1,0 +1,21 @@
+{
+  "name": "abe_lean_quick_start",
+  "version": "1.0.0",
+  "description": "Abe Kinney lean quick start repo",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "serve": "webpack-dev-server --open"
+  },
+  "author": "Abe Kinney",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1"
+  },
+    "repository": {
+    "type": "git",
+    "url": "https://github.com/mfp4073/the_road_boiler"
+  }
+}
