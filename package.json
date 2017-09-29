@@ -1,5 +1,5 @@
 {
-  "name": "abe_lean_quick_start",
+  "name": "ak-road-boiler",
   "version": "1.0.0",
   "description": "Abe Kinney lean quick start repo",
   "main": "index.js",
@@ -11,11 +11,13 @@
   "author": "Abe Kinney",
   "license": "MIT",
   "devDependencies": {
+    "react": "^16.0.0",
+    "react-router": "^4.2.0",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.4.1"
   },
-    "repository": {
+  "repository": {
     "type": "git",
-    "url": "https://github.com/mfp4073/the_road_boiler"
+    "url": "https://github.com/abrahamkinney/ak-road-boiler"
   }
 }
