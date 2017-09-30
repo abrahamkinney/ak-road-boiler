@@ -1,10 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
+import Header from './Header'
 
 class SampleForm extends React.Component {
   render() {
     return (
       <div>
-        asdfjsdklf
+        <h1>FORM</h1>
       </div>
     )
   }

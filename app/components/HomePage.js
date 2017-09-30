@@ -6,10 +6,8 @@ class HomePage extends React.Component {
   render() {
     return (
       <div>
-        <h1>Test</h1>
-        <p>Lorem Ipsum</p>
-        <Header> </Header>
-        <Link to="/form">Form</Link>
+        <Header></Header>
+      <h1>HOME</h1>
       </div>
     )
   }

@@ -6,12 +6,9 @@ import Routes from "./routes";
 import HomePage from './components/HomePage';
 import ManageForm from './components/ManageForm';
 
-console.log(Routes)
 const rootElement = document.getElementById('app');
-console.log(rootElement)
 ReactDOM.render(
   <div>
-    hi there
     <App>
       <BrowserRouter>
         { Routes }
