@@ -6355,7 +6355,64 @@ var SampleForm = function (_React$Component) {
   function SampleForm() {
     _classCallCheck(this, SampleForm);
 
-    return _possibleConstructorReturn(this, (SampleForm.__proto__ || Object.getPrototypeOf(SampleForm)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (SampleForm.__proto__ || Object.getPrototypeOf(SampleForm)).call(this));
+
+    _this.handleChange = function (e) {
+      console.log("you are clicking");
+      var newState = {};
+
+      newState[e.target.name] = e.target.value;
+      _this.setState(newState);
+
+      _this.testZip(_this.state.zip);
+    };
+
+    _this.testZip = function (zip) {
+      var zipValidation = /(^\d{5}$)|(^\d{5}-\d{4}$)/;
+      zipValidation.test(_this.state.zip) ? console.log("is valid") : console.log("not yet");
+    };
+
+    _this.handleSubmit = function (e) {
+      e.preventDefault();
+      console.log("you clicked");
+
+      var formData = {
+        formFirst: _this.state.first,
+        formLast: _this.state.last,
+        formZip: _this.state.zip
+
+        // const zipValidation = /(^\d{5}$)|(^\d{5}-\d{4}$)/;
+
+        // if (zipValidation.test(formZip)) {
+        //   return false;
+        // }
+        //
+      };$.ajax({
+        url: '/some/url',
+        dataType: 'json',
+        type: 'POST',
+        data: formData,
+        success: function success(data) {
+          console.log("posted");
+        },
+        error: function error(xhr, status, err) {
+          console.error(status, err.toString());
+        }
+      });
+
+      _this.setState({
+        firstName: '',
+        lastName: '',
+        zip: ''
+      });
+    };
+
+    _this.state = {
+      first: 'First Name',
+      last: 'Last Name',
+      zip: '91505'
+    };
+    return _this;
   }
 
   _createClass(SampleForm, [{
@@ -6367,8 +6424,42 @@ var SampleForm = function (_React$Component) {
         _react2.default.createElement(
           'h1',
           null,
-          'FORM'
-        )
+          'FORM 1'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          _react2.default.createElement(
+            'label',
+            null,
+            'First Name'
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('input', { name: 'first', required: true, onChange: this.handleChange, value: this.state.first })
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          _react2.default.createElement(
+            'label',
+            null,
+            'Last Name'
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('input', { name: 'last', required: true, onChange: this.handleChange, value: this.state.last })
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          _react2.default.createElement(
+            'label',
+            null,
+            'Zip Code'
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('input', { name: 'zip', required: true, onChange: this.handleChange, onBlur: this.testZip, value: this.state.zip })
+        ),
+        _react2.default.createElement('input', { type: 'submit', placheholder: 'Send', onClick: this.handleSubmit })
       );
     }
   }]);
