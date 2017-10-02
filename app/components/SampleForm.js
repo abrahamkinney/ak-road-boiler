@@ -15,6 +15,19 @@ class SampleForm extends React.Component {
     }
   }
 
+  componentDidMount() {
+    const url = "https://reqres.in/api/users?page=2"
+    console.log("yay mounted")
+    axios.get(url)
+    .then(function (response) {
+      console.log("get " + JSON.stringify(response));
+    })
+    .catch(function (error) {
+      console.log(data)
+      console.log(error);
+    });
+  }
+
   handleChange = (e) => {
     this.testZip(this.state.zip)
     console.log("you are clicking")
