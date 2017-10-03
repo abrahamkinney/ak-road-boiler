@@ -7,7 +7,7 @@ const Header = ({loading}) => {
     <nav>
       <Link to="/">Home</Link>
       {" | "}
-      <Link to="/form">Form</Link>
+      <Link to="/container">New Page</Link>
     </nav>
   );
 };

@@ -1,18 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import Header from './Header'
-import SampleForm from './SampleForm';
 
 
-class ManageForm extends React.Component {
+class ContainerPage extends React.Component {
   render() {
     return (
       <div>
         <Header></Header>
-        <SampleForm/>
+        <h1>new page here</h1>
       </div>
     )
   }
 }
 
-export default ManageForm;
+export default ContainerPage;
